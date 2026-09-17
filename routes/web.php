@@ -45,7 +45,7 @@ Route::get('/search', [PostController::class, 'search'])->name('search');
 Route::get('/weeks/{week}', [PostController::class, 'week'])->name('weeks.show');
 
 // Profile Feeds (profile.blade.php & profile-follow.blade.php)
-Route::prefix('profile/{user:username}')->name('profile.')->group(function () {
+Route::prefix('profile/{user:name}')->name('profile.')->group(function () {
     Route::get('/', [PostController::class, 'profile'])->name('show');
     Route::get('/follows', [PostController::class, 'profileFollows'])->name('follows');
 });
